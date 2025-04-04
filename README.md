@@ -35,7 +35,7 @@ Welcher Spielerin bekommt welches Pack
 
 Wie viele Packs bleiben übrig
 
-### 🧩 Erweiterungsideen
+## 🧩 Erweiterungsideen
 CSV-Import / Export
 
 Zufallsvergabe bei Gleichstand
