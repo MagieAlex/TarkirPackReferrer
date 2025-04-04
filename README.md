@@ -23,18 +23,19 @@ Dabei wird berücksichtigt:
 ```bash
 python tarkir_gui.py
 
+```
 
-Eingaben:
+### Eingaben:
 Packs pro Clan: über eigene Felder für Abzan, Jeskai, Sultai, Mardu, Temur
 
 Spielerwünsche: im Format Name: A,J,S (ein Spieler pro Zeile)
 
-Ausgabe:
+### Ausgabe:
 Welcher Spielerin bekommt welches Pack
 
 Wie viele Packs bleiben übrig
 
-🧩 Erweiterungsideen
+### 🧩 Erweiterungsideen
 CSV-Import / Export
 
 Zufallsvergabe bei Gleichstand
