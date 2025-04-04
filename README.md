@@ -35,6 +35,11 @@ Welcher Spielerin bekommt welches Pack
 
 Wie viele Packs bleiben übrig
 
+## Bild
+![image](https://github.com/user-attachments/assets/9eaea770-a9d7-43df-9567-b708a8fe2ba3)
+
+
+
 ## 🧩 Erweiterungsideen
 CSV-Import / Export
 
