@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-
 from collections import defaultdict
+import random
 
 # Clan-Abkürzungen zu Namen
 clans = {
@@ -15,9 +15,7 @@ clans = {
 # Umgekehrt für Einzeltabellenzuordnung
 clan_namen = ["Abzan", "Jeskai", "Sultai", "Mardu", "Temur"]
 
-# Initialisiere später: clan_entry_fields = {"Abzan": Entry, ...}
 clan_entry_fields = {}
-
 
 def parse_packs():
     packs = {}
@@ -28,7 +26,6 @@ def parse_packs():
     except ValueError:
         messagebox.showerror("Fehler", "Alle Pack-Felder müssen ganze Zahlen sein.")
     return packs
-
 
 def parse_players(text):
     players = {}
@@ -41,7 +38,6 @@ def parse_players(text):
         messagebox.showerror("Fehler", "Spieler-Eingabe fehlerhaft (z.B. Anna: J,A,T)")
     return players
 
-
 def verteile_packs():
     output_text.delete("1.0", tk.END)
     packs = parse_packs()
@@ -49,6 +45,7 @@ def verteile_packs():
     zuweisung = {}
     pack_rest = packs.copy()
 
+    # Wunschbasierte Vergabe (Prio 1 → 3)
     for wunsch_stufe in range(3):
         for spieler, wunschliste in wishes.items():
             if spieler in zuweisung:
@@ -59,18 +56,31 @@ def verteile_packs():
                     zuweisung[spieler] = clan
                     pack_rest[clan] -= 1
 
+    # Fallback-Verteilung: zufälliger Clan außerhalb Wunschliste
+    for spieler in wishes:
+        if spieler in zuweisung:
+            continue
+        # Suche übrige Clans, die nicht in den Wünschen sind
+        übrige_clans = [clan for clan in clan_namen if clan not in wishes[spieler] and pack_rest.get(clan, 0) > 0]
+        if übrige_clans:
+            clan = random.choice(übrige_clans)
+            zuweisung[spieler] = clan
+            pack_rest[clan] -= 1
+        else:
+            zuweisung[spieler] = "KEIN PACK MEHR VERFÜGBAR"
+
+    # Ausgabe
     output_text.insert(tk.END, "=== Pack-Zuweisung ===\n")
     for spieler, clan in zuweisung.items():
         output_text.insert(tk.END, f"{spieler} bekommt ein {clan}-Pack\n")
-
+    
     output_text.insert(tk.END, "\n=== Übrige Packs ===\n")
     for clan, rest in pack_rest.items():
         output_text.insert(tk.END, f"{clan}: {rest} Pack(s)\n")
 
-
 # GUI aufbauen
 root = tk.Tk()
-root.title("Phoenix Inn Tarkir PreRelease-Zuweiser")
+root.title("Tarkir PreRelease-Zuweiser")
 
 frame_packs = tk.LabelFrame(root, text="Anzahl PreRelease Packs pro Clan")
 frame_packs.pack(padx=10, pady=5)
