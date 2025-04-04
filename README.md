@@ -9,7 +9,7 @@ Dieses Tool hilft Organisator*innen (und Stefans) von Magic: The Gathering Prere
 Dabei wird berücksichtigt:
 - die **Anzahl verfügbarer Packs pro Clan**
 - bis zu **3 Wunschprioritäten pro Spieler**
-- **faire Vergabe**: Wer zuerst einen verfügbaren Wunsch erfüllt bekommt, erhält diesen.
+- **faire Vergabe**: Unter allen Spielern derselben Priorität zum selben Pack wird ausgelost. Wer leer ausgeht, kommt in den Pool seines Zweitwunsches.
 
 
 ## 💻 Installation & Nutzung
