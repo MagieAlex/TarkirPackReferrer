@@ -44,7 +44,7 @@ Wie viele Packs bleiben übrig
 ## 🧩 Erweiterungsideen
 CSV-Import / Export
 
-Zufallsvergabe bei Gleichstand
+✅ Zufallsvergabe bei Gleichstand (implementiert) 
 
 Web-Oberfläche
 
