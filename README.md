@@ -4,7 +4,7 @@ Ein einfaches Python-Tool mit grafischer Benutzeroberfläche zur fairen Verteilu
 
 ## 🔍 Was macht dieses Tool?
 
-Dieses Tool hilft Organisator*innen (und Stefans) von Magic: The Gathering Preelease Events (z. B. „Khans of Tarkir“ oder „Dragons of Tarkir“) dabei, die limitierten Packs der fünf Tarkir-Clans (Abzan, Jeskai, Sultai, Mardu, Temur) **nach Wunschpriorität** unter den Spieler*innen zu verteilen.
+Dieses Tool hilft Organisator*innen (und Stefans) von Magic: The Gathering Prerelease Events (wie im aktuellen Tarkir: Dragonstorm) dabei, die limitierten Packs der fünf Tarkir-Clans (Abzan, Jeskai, Sultai, Mardu, Temur) **nach Wunschpriorität** unter den Spieler*innen zu verteilen.
 
 Dabei wird berücksichtigt:
 - die **Anzahl verfügbarer Packs pro Clan**
